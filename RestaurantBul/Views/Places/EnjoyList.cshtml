@@ -1,0 +1,202 @@
+﻿@model List<RestaurantBul.Models.Place>
+
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Surjith S M">
+    <meta name="description" content="#">
+    <meta name="keywords" content="#">
+
+    <script src="../../cdn-cgi/apps/head/-mEFVS8y7qx5pVzWHQTCQu5gnVM.js"></script>
+    <link rel="shortcut icon" href="#">
+
+    <title>Listed</title>
+
+    <link rel="stylesheet" href="~/Content/tempp/Sablon/listed/css/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/Content/tempp/Sablon/listed/css/themify-icons.css">
+
+    <link rel="stylesheet" href="~/Content/tempp/Sablon/listed/css/simple-line-icons.css">
+
+    <link rel="stylesheet" href="~/Content/tempp/Sablon/listed/css/font-awesome.min.css">
+
+    <link href="~/Content/tempp/Sablon/listed/css/set1.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/Content/tempp/Sablon/listed/css/style.css">
+</head>
+
+<body>
+
+   
+
+
+
+
+
+
+
+    <section class="featured-wrap">
+        <div class="container-fluid container-subpage">
+            <div class="row">
+                <div class="col-md-12 responsive-wrap">
+                    <div class="row detail-filter-wrap">
+                        <div class="row">
+
+                            @foreach (var item in Model)
+
+                            {
+                                <div class="col-md-4 card-2">
+
+                                    <div class="card">
+                                        <a href="detail.html"><img class="card-img-top" src="@item.MenuPic" alt="Card image cap"></a>
+                                        <div class="card-body">
+                                            <h5 class="card-title">@item.PlaceName</h5>
+                                            <ul class="card-rating">
+                                                <li>5.0</li>
+                                                <li>3 yorum</li>
+                                                <li><i class="fa fa-circle" aria-hidden="true"></i></li>
+                                                <li>@item.AvgPrice</li>
+                                                <li><i class="fa fa-circle" aria-hidden="true"></i></li>
+                                                <li>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="poplar-svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 471.632 471.632" style="enable-background:new 0 0 471.632 471.632;" xml:space="preserve" width="512px" height="512px"><g><g>
+<g>
+<rect x="249.111" y="311.14" width="19.692" height="150.65" data-original="#000000" class="active-path" data-old_color="#ff6b6b" fill="#ff6b6b" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</g>
+</g><g>
+<g>
+<rect x="200.861" y="451.94" width="116.19" height="19.692" data-original="#000000" class="active-path" data-old_color="#ff6b6b" fill="#ff6b6b" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</g>
+</g><g>
+<g>
+<path d="M67.939,127.015l191.015,197.908l190.031-197.908H67.939z M114.216,146.708h289.477L258.955,296.369L114.216,146.708z" data-original="#000000" class="active-path" data-old_color="#ff6b6b" fill="#ff6b6b" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</g>
+</g><g>
+<g>
+<path d="M94.524,83.692c28.554,0,52.185,23.631,52.185,53.169h19.692C166.401,96.492,133.909,64,94.524,64    s-71.877,32.492-71.877,72.861c0,40.369,32.492,72.862,71.877,72.862c17.723,0,34.462-6.892,49.231-18.708l-13.785-14.769    c-9.846,8.861-22.646,13.785-35.446,13.785c-28.554,0-52.185-23.631-52.185-53.169C42.339,107.324,65.97,83.692,94.524,83.692z" data-original="#000000" class="active-path" data-old_color="#ff6b6b" fill="#ff6b6b" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</g>
+</g><g>
+<g>
+<polygon points="403.693,0 284.555,70.892 267.816,133.908 286.524,139.815 301.293,84.677 414.524,17.723   " data-original="#000000" class="active-path" data-old_color="#ff6b6b" fill="#ff6b6b" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</g>
+</g></g> </svg>  Eğlenceye Çık
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                        <div class="card-bottom">
+                                            <p><i class="ti-location-pin"></i>@item.County</p>
+                                            <span>@item.OpenTime - @item.CloseTime</span>
+                                        </div>
+                                    </div>
+                                </div>}
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?callback=myMap&amp;key=AIzaSyDMTUkJAmi1ahsx9uCGSgmcSmqDTBF9ygg"></script>
+
+</body>
+
+
+
+
