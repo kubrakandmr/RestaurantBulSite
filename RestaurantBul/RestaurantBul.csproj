@@ -214,6 +214,7 @@
     <Compile Include="Models\AddPla.cs" />
     <Compile Include="Models\AddPlaViewModel.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\CommentViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Place.cs" />
@@ -450,6 +451,7 @@
     <Content Include="Views\Places\SearchPlace.cshtml" />
     <Content Include="Views\Home\_PartialSearch.cshtml" />
     <Content Include="Views\Places\PlaceDetails.cshtml" />
+    <Content Include="Views\Places\CommentList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

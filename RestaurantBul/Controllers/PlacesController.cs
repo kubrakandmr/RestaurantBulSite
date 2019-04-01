@@ -67,33 +67,41 @@ namespace RestaurantBul.Controllers
             return View(result);
 
         }
+
+        public ActionResult CommentList()
+        {
+            var result = (from a in db.Places
+                          join c in db.Comments on a.PlaceID equals c.PlaceID
+                          select new CommentViewModel
+                          {
+                              Content = c.Content,
+                              PlaceName = a.PlaceName,
+                              Name = c.ApplicationUser.UserName,
+                              CategoryName = a.CategoryName,
+                              CommentPic = c.CommentPic
+                          }).ToList();
+
+            return View(result);
+        }
         [HttpGet]
         public ActionResult PlaceDetails()
         {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult PlaceDetails(Place place)
-        {
             var result = (from a in db.Places
-                          join b in db.Comments on a.PlaceID equals b.PlaceID
-                          join c in db.Users on b.ApplicationUser.Id equals c.Id
-                          select new
+                        join b in db.AddPlas on a.PlaceID equals b.PlaceID
+                          select new CommentViewModel()
                           {
-                              a.PlaceName,
-                              a.OpenTime,
-                              a.Phone,
-                              a.County,
-                              a.CloseTime,
-                              a.City,
-                              a.Address,
-                              b.Content,
-                              b.CommentPic,
-                              c.Name,
-                              c.Surname
+                             PlaceName = a.PlaceName,
+                             OpenTime= a.OpenTime,
+                             Phone= a.Phone,
+                             County= a.County,
+                             CloseTime= a.CloseTime,
+                             City= a.City,
+                             Address= a.Address,
+                            
 
                           }).ToList();
-            return View(result);
+
+            return View(result.FirstOrDefault());
 
         }
 
