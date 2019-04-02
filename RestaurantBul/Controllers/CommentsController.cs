@@ -25,6 +25,7 @@ namespace RestaurantBul.Controllers
         }
 
         // GET: Comments/Details/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -39,9 +40,10 @@ namespace RestaurantBul.Controllers
             return View(comment);
         }
 
-        
+
 
         // GET: Comments/Create
+       
         public ActionResult Create(int Id)
         {
             //ViewBag.PlaceID = new SelectList(db.Places, "PlaceID", "PlaceName");

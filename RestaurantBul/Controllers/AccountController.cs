@@ -190,7 +190,7 @@ namespace RestaurantBul.Controllers
                     //user.Name = "Kubra";
                     //user.Surname = "Kandemir";
                     //user.Email = "kubrakandmr@gmail.com";
-                    
+
                     //string userPWD = "Aslı123.";
 
                     //var chkUser = UserManager.Create(user, userPWD);
@@ -205,7 +205,7 @@ namespace RestaurantBul.Controllers
                     //db savechanges olmadan id ye yada değere ulaşmamızı sağlar.
 
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Login", "Account", new { area = "" });
                 }
                 AddErrors(result);
 

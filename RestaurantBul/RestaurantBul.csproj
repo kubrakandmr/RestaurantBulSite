@@ -184,29 +184,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\MvcHtmlHelper.cs" />
-    <Compile Include="Migrations\201903210624559_kubra.cs" />
-    <Compile Include="Migrations\201903210624559_kubra.Designer.cs">
-      <DependentUpon>201903210624559_kubra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903270948446_df.cs" />
-    <Compile Include="Migrations\201903270948446_df.Designer.cs">
-      <DependentUpon>201903270948446_df.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903271011097_erererer.cs" />
-    <Compile Include="Migrations\201903271011097_erererer.Designer.cs">
-      <DependentUpon>201903271011097_erererer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903271037534_jjhjhjh.cs" />
-    <Compile Include="Migrations\201903271037534_jjhjhjh.Designer.cs">
-      <DependentUpon>201903271037534_jjhjhjh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903280650263_yeterrrr.cs" />
-    <Compile Include="Migrations\201903280650263_yeterrrr.Designer.cs">
-      <DependentUpon>201903280650263_yeterrrr.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903280807152_dfdfdfd.cs" />
-    <Compile Include="Migrations\201903280807152_dfdfdfd.Designer.cs">
-      <DependentUpon>201903280807152_dfdfdfd.cs</DependentUpon>
+    <Compile Include="Migrations\201904021010008_firstt.cs" />
+    <Compile Include="Migrations\201904021010008_firstt.Designer.cs">
+      <DependentUpon>201904021010008_firstt.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -452,6 +432,7 @@
     <Content Include="Views\Home\_PartialSearch.cshtml" />
     <Content Include="Views\Places\PlaceDetails.cshtml" />
     <Content Include="Views\Places\CommentList.cshtml" />
+    <Content Include="Views\Places\AllPlace.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -471,23 +452,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903210624559_kubra.resx">
-      <DependentUpon>201903210624559_kubra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903270948446_df.resx">
-      <DependentUpon>201903270948446_df.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903271011097_erererer.resx">
-      <DependentUpon>201903271011097_erererer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903271037534_jjhjhjh.resx">
-      <DependentUpon>201903271037534_jjhjhjh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903280650263_yeterrrr.resx">
-      <DependentUpon>201903280650263_yeterrrr.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903280807152_dfdfdfd.resx">
-      <DependentUpon>201903280807152_dfdfdfd.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904021010008_firstt.resx">
+      <DependentUpon>201904021010008_firstt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
