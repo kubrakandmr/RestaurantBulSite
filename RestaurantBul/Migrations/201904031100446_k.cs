@@ -3,7 +3,7 @@ namespace RestaurantBul.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class firstt : DbMigration
+    public partial class k : DbMigration
     {
         public override void Up()
         {

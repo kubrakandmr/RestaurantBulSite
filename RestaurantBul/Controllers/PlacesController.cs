@@ -113,7 +113,7 @@ namespace RestaurantBul.Controllers
                           join f in db.AddPlas on a.PlaceID equals f.PlaceID
                           select new CommentViewModel()
                           {
-                              PlaceID=a.PlaceID,
+                              PlaceID = a.PlaceID,
                               MenuPic = a.MenuPic,
                               PlaceName = a.PlaceName,
                               Content = c.Content,
@@ -122,7 +122,7 @@ namespace RestaurantBul.Controllers
                               County = a.County,
                               CloseTime = a.CloseTime,
                               OpenTime = a.OpenTime
-                          }).OrderByDescending(x => x.PlaceID).Take(3).ToList();
+                          }).Take(3);
             return View(result);
 
         }
@@ -162,7 +162,8 @@ namespace RestaurantBul.Controllers
                              CloseTime= a.CloseTime,
                              City= a.City,
                              Address= a.Address,
-                             MenuPic=a.MenuPic
+                             MenuPic=a.MenuPic,
+                             AvgPrice=a.AvgPrice
                             
 
                           }).ToList();
