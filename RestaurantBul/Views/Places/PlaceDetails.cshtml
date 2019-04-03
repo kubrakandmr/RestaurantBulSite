@@ -3,7 +3,7 @@
 
 
 
-@model RestaurantBul.Models.CommentViewModel
+@model  RestaurantBul.Models.CommentViewModel
 
 
 
@@ -56,32 +56,12 @@
             <img src=@Model.MenuPic class="img-fluid">
         </a>*@
                     </div>
-                    @*<div class="swiper-slide">
-                        <a href="images/feat_slide2.jpg" class="grid image-link">
-                            <img src="images/feat_slide2.jpg" class="img-fluid" alt="#">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="images/feat_slide3.jpg" class="grid image-link">
-                            <img src="images/feat_slide3.jpg" class="img-fluid" alt="#">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="images/feat_slide4.jpg" class="grid image-link">
-                            <img src="images/feat_slide4.jpg" class="img-fluid" alt="#">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="images/feat_slide5.jpg" class="grid image-link">
-                            <img src="images/feat_slide5.jpg" class="img-fluid" alt="#">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="images/feat_slide6.jpg" class="grid image-link">
-                            <img src="images/feat_slide6.jpg" class="img-fluid" alt="#">
-                        </a>
-                    </div>*@
-                @*</div>*@
+                  
+                   
+                    
+                  
+                  
+              
 
                 <div class="swiper-pagination swiper-pagination-white"></div>
 
@@ -166,7 +146,10 @@
                         <div class="booking-checkbox_wrap my-4">
                             <h4>Yorumlar</h4>
                             <hr>
-                            @Html.Action("CommentList")
+                            @{ 
+                                Html.RenderAction("CommentList", "Places", new { id = Model.PlaceID});
+                            }
+                            @*@Html.Action("CommentList")*@
 
 
                             <div class="customer-review_wrap">
@@ -196,14 +179,10 @@
                                     </p>
                                     <ul>
                                         <li>
-                                            <img src="@Model.CommentPic" class="img-fluid" alt="#">
+                                            @*<img src="@Model.CommentPic" class="img-fluid" alt="#">*@
+                                            <img width="75" src="@Model.CommentPic" />
                                         </li>
-                                        <li>
-                                            <img src="images/review-img2.jpg" class="img-fluid" alt="#">
-                                        </li>
-                                        <li>
-                                            <img src="images/review-img3.jpg" class="img-fluid" alt="#">
-                                        </li>
+                                       
                                     </ul>
 
 

@@ -9,11 +9,12 @@ namespace RestaurantBul.Models
 {
     public class CommentViewModel
     {
+       
         public string Content { get; set; }
 
         public string CommentPic { get; set; }
+        public int PlaceID { get; set; }
 
-    
         public int Point { get; set; }
 
         public string PlaceName { get; set; }

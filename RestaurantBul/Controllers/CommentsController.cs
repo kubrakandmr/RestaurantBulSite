@@ -69,8 +69,8 @@ namespace RestaurantBul.Controllers
 
                         string newfoto = Guid.NewGuid().ToString() + photoInfo.Extension;
                         img.Resize(800, 350); //resim boyutu için
-                        img.Save("../UpLoads/Pictures/" + newfoto);
-                        comment.CommentPic = "../UpLoads/Pictures/" + newfoto;
+                        img.Save("~/UpLoads/CommentPic/" + newfoto);
+                        comment.CommentPic = "../UpLoads/CommentPic/" + newfoto;
                     }
 
                     string usid = User.Identity.GetUserId();
@@ -100,6 +100,7 @@ namespace RestaurantBul.Controllers
         }
 
         // GET: Comments/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -120,6 +121,7 @@ namespace RestaurantBul.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "CommentID,Content,CommentPic,Point,PlaceID,UserID")] Comment comment)
         {
             if (ModelState.IsValid)
@@ -133,6 +135,7 @@ namespace RestaurantBul.Controllers
         }
 
         // GET: Comments/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -150,6 +153,7 @@ namespace RestaurantBul.Controllers
         // POST: Comments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Comment comment = db.Comments.Find(id);

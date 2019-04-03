@@ -75,28 +75,32 @@ namespace RestaurantBul.Controllers
 
         }
 
-        public ActionResult CommentList()
+        public ActionResult CommentList(int id)
         {
             var result = (from a in db.Places
                           join c in db.Comments on a.PlaceID equals c.PlaceID
+                          where a.PlaceID == id
                           select new CommentViewModel
-                          {
-                              Content = c.Content,
-                              PlaceName = a.PlaceName,
-                              Name = c.ApplicationUser.UserName,
-                              CategoryName = a.CategoryName,
-                              CommentPic = c.CommentPic
+                          { PlaceID = id,
+                             Content =c.Content,
+                             CommentPic =c.CommentPic,
+                             PlaceName= a.PlaceName,
+                             CategoryName= a.CategoryName,
+                             Name= c.ApplicationUser.Name,
+                             Point = c.Point,
                           }).ToList();
 
-            return View(result);
+            return PartialView(result);
         }
         [HttpGet]
-        public ActionResult PlaceDetails()
+        public ActionResult PlaceDetails(int id)
         {
             var result = (from a in db.Places
                         join b in db.AddPlas on a.PlaceID equals b.PlaceID
+                        where a.PlaceID == id
                           select new CommentViewModel()
                           {
+                             PlaceID = a.PlaceID,
                              PlaceName = a.PlaceName,
                              OpenTime= a.OpenTime,
                              Phone= a.Phone,
@@ -104,6 +108,7 @@ namespace RestaurantBul.Controllers
                              CloseTime= a.CloseTime,
                              City= a.City,
                              Address= a.Address,
+                             MenuPic=a.MenuPic
                             
 
                           }).ToList();

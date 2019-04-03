@@ -427,15 +427,16 @@
     <Content Include="Views\Places\EatandOutList.cshtml" />
     <Content Include="Views\Places\EatList.cshtml" />
     <Content Include="Views\Places\CafeList.cshtml" />
-    <Content Include="Views\Comments\Create.cshtml" />
     <Content Include="Views\Places\SearchPlace.cshtml" />
     <Content Include="Views\Home\_PartialSearch.cshtml" />
     <Content Include="Views\Places\PlaceDetails.cshtml" />
     <Content Include="Views\Places\CommentList.cshtml" />
     <Content Include="Views\Places\AllPlace.cshtml" />
+    <Content Include="Views\Comments\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="UpLoads\CommentPic\" />
     <Folder Include="UpLoads\MenuPic\" />
   </ItemGroup>
   <ItemGroup>

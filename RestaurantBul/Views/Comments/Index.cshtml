@@ -6,11 +6,14 @@
 }
 <h2>Yorumlar</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model=>model.ApplicationUser.Name)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Place.PlaceName)
         </th>
@@ -31,6 +34,9 @@
     {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem=>item.ApplicationUser.Name)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Place.PlaceName)
             </td>
             <td>
@@ -44,11 +50,11 @@
                 @Html.DisplayFor(modelItem => item.Point)
             </td>
 
-            <td>
+            @*<td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.CommentID }) |
                 @Html.ActionLink("Details", "Details", new { id = item.CommentID }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.CommentID })
-            </td>
+            </td>*@
         </tr>
     }
 
