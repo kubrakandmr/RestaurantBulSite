@@ -58,14 +58,46 @@
                                             <h5 class="card-title">@item.PlaceName</h5>
                                             <ul class="card-rating">
                                                 <li>5.0</li>
-                                                <li> <a href="@Url.Action("Index","Comments")" style=" color:tomato">Yorumlar</a></li>
+                                                @*<li> <a href="@Url.Action("Index","Comments")" style=" color:tomato">Yorumlar</a></li>*@
                                                 <li><i class="fa fa-circle" aria-hidden="true"></i></li>
-                                                <li>@item.AvgPrice</li>
+                                                <li>@item.AvgPrice tl</li>
                                                 <li><i class="fa fa-circle" aria-hidden="true"></i></li>
                                                 <li>
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="poplar-svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 471.632 471.632" style="enable-background:new 0 0 471.632 471.632;" xml:space="preserve" width="512px" height="512px"><g><g>
 <g>
 <rect x="249.111" y="311.14" width="19.692" height="150.65" data-original="#000000" class="active-path" data-old_color="#ff6b6b" fill="#ff6b6b" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -132,10 +164,74 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </g>
 </g><g>
 <g>
 <path d="M67.939,127.015l191.015,197.908l190.031-197.908H67.939z M114.216,146.708h289.477L258.955,296.369L114.216,146.708z" data-original="#000000" class="active-path" data-old_color="#ff6b6b" fill="#ff6b6b" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -202,10 +298,74 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </g>
 </g><g>
 <g>
 <polygon points="403.693,0 284.555,70.892 267.816,133.908 286.524,139.815 301.293,84.677 414.524,17.723   " data-original="#000000" class="active-path" data-old_color="#ff6b6b" fill="#ff6b6b" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -243,19 +403,21 @@
                                             </ul>
 
                                         </div>
+                                        @if (this.User.Identity.IsAuthenticated)
+                                        {
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10">
 
-                                        <div class="form-group">
-                                            <div class="col-md-offset-2 col-md-10">
+                                                    <a href="@Url.Action("Create", "Comments", new { Id = item.PlaceID })" type="button" class="btn btn-default" style="background-color:tomato ; color:white">Yorum Yap</a>
 
-                                                <a href="@Url.Action("Create","Comments",new { Id=item.PlaceID})" type="button" class="btn btn-default" style="background-color:tomato ; color:white">Yorum Yap</a>
-
+                                                </div>
+                                            </div>
+                                        }
+                                            <div class="card-bottom">
+                                                <p><i class="ti-location-pin"></i>@item.County</p>
+                                                <span>@item.OpenTime - @item.CloseTime</span>
                                             </div>
                                         </div>
-                                        <div class="card-bottom">
-                                            <p><i class="ti-location-pin"></i>@item.County</p>
-                                            <span>@item.OpenTime - @item.CloseTime</span>
-                                        </div>
-                                    </div>
                                 </div>}
 
 

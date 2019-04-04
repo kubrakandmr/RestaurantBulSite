@@ -60,9 +60,9 @@
                                             <h5 class="card-title">@item.PlaceName</h5>
                                             <ul class="card-rating">
                                                 <li>5.0</li>
-                                                <li> <a href="@Url.Action("Index","Comments")" style=" color:tomato">Yorumlar</a></li>
+                                                @*<li> <a href="@Url.Action("Index","Comments")" style=" color:tomato">Yorumlar</a></li>*@
                                                 <li><i class="fa fa-circle" aria-hidden="true"></i></li>
-                                                <li>@item.AvgPrice</li>
+                                                <li>@item.AvgPrice tl</li>
                                                 <li><i class="fa fa-circle" aria-hidden="true"></i></li>
                                                 <li>
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="card-svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 470 470" enable-background="new 0 0 470 470" width="512px" height="512px">
@@ -79,20 +79,22 @@
                                             </ul>
 
                                         </div>
+                                        @if (this.User.Identity.IsAuthenticated)
+                                        {
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10">
 
-                                        <div class="form-group">
-                                            <div class="col-md-offset-2 col-md-10">
+                                                    <a href="@Url.Action("Create", "Comments", new { Id = item.PlaceID })" type="button" class="btn btn-default" style="background-color:tomato ; color:white">Yorum Yap</a>
 
-                                                <a href="@Url.Action("Create","Comments",new { Id=item.PlaceID})" type="button" class="btn btn-default" style="background-color:tomato ; color:white">Yorum Yap</a>
+                                                </div>
+                                            </div>
+                                        }
 
+                                            <div class="card-bottom">
+                                                <p><i class="ti-location-pin"></i>@item.County</p>
+                                                <span>@item.OpenTime - @item.CloseTime</span>
                                             </div>
                                         </div>
-
-                                        <div class="card-bottom">
-                                            <p><i class="ti-location-pin"></i>@item.County</p>
-                                            <span>@item.OpenTime - @item.CloseTime</span>
-                                        </div>
-                                    </div>
                                 </div>}
 
 

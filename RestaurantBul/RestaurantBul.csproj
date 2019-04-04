@@ -433,6 +433,7 @@
     <Content Include="Views\Places\CommentList.cshtml" />
     <Content Include="Views\Places\AllPlace.cshtml" />
     <Content Include="Views\Comments\Create.cshtml" />
+    <Content Include="Views\Places\SecilenEkler.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

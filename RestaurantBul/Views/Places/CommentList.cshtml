@@ -10,36 +10,25 @@
 {
     <div class="customer-review_wrap">
         <div class="customer-img">
-            @*<img src="@Url.Content(item.CommentPic)" class="img-fluid" alt="#">*@
+         
             <p>@item.Name</p>
-            <span>@item.Name</span>
+            @*<span>@item.Email</span>*@
         </div>
         <div class="customer-content-wrap">
             <div class="customer-content">
-                <div class="customer-review">
-                    <h5>@item.PlaceName</h5>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span class="round-icon-blank"></span>
-                    <p> </p>
-                </div>
-                <div class="customer-rating">8.0</div>
+             
+                <div class="customer-rating">@item.Point</div>
             </div>
             <p class="customer-text">
                 @item.Content
             </p>
             <ul>
                 <li>
-                    <img src="@Url.Content(item.CommentPic)" class="img-fluid" alt="#">
+                    <img src="/@item.CommentPic" class="img-fluid" alt="">
                 </li>
            
             </ul>
-            <span>28 people marked this review as helpful</span>
-            <a href="#" class="helpful-btn">
-                <span class="icon-like"></span>Helpful
-            </a>
+          
         </div>
     </div>
     <hr />

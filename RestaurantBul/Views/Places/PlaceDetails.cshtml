@@ -44,151 +44,61 @@
     <link rel="stylesheet" href="~/Content/tempp/Sablon/listed/css/style.css">
 </head>
 <body>
-   
-        <div>
+    <section class="gray-dark booking-details_wrap">
+        <div class="container">
 
-            <div class="swiper-container">
-                @*<div class="swiper-wrapper">*@
-                    @*<div class="swiper-slide">*@
-                        <a href="#"><img class="card-img-top" src="@Model.MenuPic" alt=""></a>
-                        @*<a href="images/feat_slide1.jpg" class="grid image-link">
-
-            <img src=@Model.MenuPic class="img-fluid">
-        </a>*@
-                    </div>
-                  
-                   
-                    
-                  
-                  
-              
-
-                <div class="swiper-pagination swiper-pagination-white"></div>
-
-                <div class="swiper-button-next swiper-button-white"></div>
-                <div class="swiper-button-prev swiper-button-white"></div>
-            @*</div>*@
-        </div>
-
-
-        <section class="reserve-block">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12 responsive-wrap">
+                    <div class="booking-checkbox_wrap">
                         <h5>@Model.PlaceName</h5>
-                        <p>
-                            <span>@Model.AvgPrice</span>$$
-                        </p>
+                        <ul class="card-rating">
 
-                    </div>
-                    <div class="col-md-6">
-                        <div class="reserve-seat-block">
-                            <div class="reserve-rating mx-0 mx-md-3">
-                                <span>@Model.Point</span>
-                            </div>
 
-                        </div>
+                            <li> @Model.Point</li>
+                            <li><i class="fa fa-circle" aria-hidden="true"></i></li>
+                            <li>@Model.AvgPrice tl</li>
+
+                        </ul>
+
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <section class="gray-dark booking-details_wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 responsive-wrap">
+                   
+                        <img src="/@Model.MenuPic"  />
+                  
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-        <section class="gray-dark booking-details_wrap">
-            <div class="container">
-                <div class="row">
 
 
-                    <div class="col-md-8 responsive-wrap">
-                        <div class="booking-checkbox_wrap">
-                          
-                            <div class="row">
-                                <div class="col-md-6 col-lg-4">
-                                    <label class="custom-checkbox">
-                                        <span class="ti-check-box"></span>
-                                        <span class="custom-control-description">Bike Parking</span>
-                                    </label>
-                                </div>
-                                <div class="col-md-6 col-lg-4">
-                                    <label class="custom-checkbox">
-                                        <span class="ti-check-box"></span>
-                                        <span class="custom-control-description">Wireless Internet </span>
-                                    </label>
-                                </div>
-                                <div class="col-md-6 col-lg-4">
-                                    <label class="custom-checkbox">
-                                        <span class="ti-check-box"></span>
-                                        <span class="custom-control-description">Smoking Allowed </span>
-                                    </label>
-                                </div>
-                                <div class="col-md-6 col-lg-4">
-                                    <label class="custom-checkbox">
-                                        <span class="ti-check-box"></span>
-                                        <span class="custom-control-description">Street Parking</span>
-                                    </label>
-                                </div>
-                                <div class="col-md-6 col-lg-4">
-                                    <label class="custom-checkbox">
-                                        <span class="ti-check-box"></span>
-                                        <span class="custom-control-description">Special</span>
-                                    </label>
-                                </div>
-                                <div class="col-md-6 col-lg-4">
-                                    <label class="custom-checkbox">
-                                        <span class="ti-check-box"></span>
-                                        <span class="custom-control-description">Accepts Credit cards</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+    <section class="gray-dark booking-details_wrap">
+        <div class="container">
+            <div class="row">
 
+
+                <div class="col-md-8 responsive-wrap">
+                    <div class="booking-checkbox_wrap">
+                        @{
+                            Html.RenderAction("SecilenEkler", "Places", new { id = Model.PlaceID });
+                        }
+                    </div>
 
                         <div class="booking-checkbox_wrap my-4">
                             <h4>Yorumlar</h4>
                             <hr>
-                            @{ 
-                                Html.RenderAction("CommentList", "Places", new { id = Model.PlaceID});
+                            @{
+                                Html.RenderAction("CommentList", "Places", new { id = Model.PlaceID });
                             }
-                            @*@Html.Action("CommentList")*@
-
-
-                            <div class="customer-review_wrap">
-                                <div class="customer-img">
-                                    <img src="images/customer-img1.jpg" class="img-fluid" alt="#">
-                                    <p>@Model.Name</p>
-                                    <span>35 Reviews</span>
-                                </div>
-                                <div class="customer-content-wrap">
-                                    <div class="customer-content">
-                                        <div class="customer-review">
-
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span class="round-icon-blank"></span>
-
-                                        </div>
-                                        <div class="customer-rating">8.0</div>
-                                    </div>
-                                    <p class="customer-text">
-                                        @Model.Content
-                                    </p>
-                                    <p class="customer-text">
-                                        @Model.Content
-                                    </p>
-                                    <ul>
-                                        <li>
-                                            @*<img src="@Model.CommentPic" class="img-fluid" alt="#">*@
-                                            <img width="75" src="@Model.CommentPic" />
-                                        </li>
-                                       
-                                    </ul>
-
-
-                                </div>
-                            </div>
-
                             <hr>
 
                         </div>
@@ -209,7 +119,7 @@
                                 <span class="icon-screen-smartphone"></span>
                                 <p>@Model.Phone</p>
                             </div>
-                            
+
                             <div class="address">
                                 <span class="icon-clock"></span>
                                 <p>@Model.OpenTime - @Model.CloseTime</p>
@@ -220,9 +130,9 @@
 
                     </div>
                 </div>
-            </div>
-           
-        </section>
+        </div>
+
+    </section>
 
 
 
@@ -238,41 +148,41 @@
 
     <script src="js/jquery.magnific-popup.js"></script>
 
-        <script src="js/swiper.min.js"></script>
+    <script src="js/swiper.min.js"></script>
     <script>
-            var swiper = new Swiper('.swiper-container', {
-                slidesPerView: 3,
-                slidesPerGroup: 3,
-                loop: true,
-                loopFillGroupWithBlank: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+    <script>
+        if ($('.image-link').length) {
+            $('.image-link').magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
             });
-        </script>
-        <script>
-            if ($('.image-link').length) {
-                $('.image-link').magnificPopup({
-                    type: 'image',
-                    gallery: {
-                        enabled: true
-                    }
-                });
-            }
-            if ($('.image-link2').length) {
-                $('.image-link2').magnificPopup({
-                    type: 'image',
-                    gallery: {
-                        enabled: true
-                    }
-                });
-            }
-        </script>
+        }
+        if ($('.image-link2').length) {
+            $('.image-link2').magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        }
+    </script>
 </body>
 
 <!-- Mirrored from demo.web3canvas.com/themeforest/listed/detail.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Mar 2019 06:46:09 GMT -->
