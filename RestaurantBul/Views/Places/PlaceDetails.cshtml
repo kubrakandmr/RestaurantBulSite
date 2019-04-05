@@ -88,9 +88,12 @@
 
                 <div class="col-md-8 responsive-wrap">
                     <div class="booking-checkbox_wrap">
+                        <h4>Özellikler</h4>
+                        <hr>
                         @{
                             Html.RenderAction("SecilenEkler", "Places", new { id = Model.PlaceID });
                         }
+                        <hr>
                     </div>
 
                         <div class="booking-checkbox_wrap my-4">

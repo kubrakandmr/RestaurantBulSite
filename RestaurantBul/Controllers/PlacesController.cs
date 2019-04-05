@@ -79,36 +79,30 @@ namespace RestaurantBul.Controllers
         {
 
             var result = (from a in db.Places
-                         join b in db.AddPlas on a.PlaceID equals b.PlaceID
-                         join c in db.Additionals on b.AdditionalID equals c.AdditionalID
-                         where a.PlaceID == id
-                         select new AddPlaViewModel
-                         {
-                            AlkolServis= c.AlkolServis,
-                            CanliMuzik= c.CanliMuzik,
-                            DenizKenari =c.DenizKenari,
-                            DisMekan= c.DisMekan,
-                             GelAl=c.GelAl,
-                             HayvanDostu=c.HayvanDostu,
-                             Kahvalti=c.Kahvalti,
-                             OnlineRezervasyon=c.OnlineRezervasyon,
-                             Otopark=c.Otopark,
-                             PaketServis=c.PaketServis,
-                             SigaraAlanı=c.SigaraAlanı,
-                            TatlivePasta= c.TatlivePasta,
-                            TerasiVar= c.TerasiVar,
-                            Wifi= c.Wifi,
-                           İcMekan = c.İcMekan
+                          join b in db.AddPlas on a.PlaceID equals b.PlaceID
+                          join c in db.Additionals on b.AdditionalID equals c.AdditionalID
+                          where a.PlaceID == id
+                          select new CommentViewModel
+                          {
+                              AlkolServis = c.AlkolServis,
+                              CanliMuzik = c.CanliMuzik,
+                              DenizKenari = c.DenizKenari,
+                              DisMekan = c.DisMekan,
+                              GelAl = c.GelAl,
+                              HayvanDostu = c.HayvanDostu,
+                              Kahvalti = c.Kahvalti,
+                              OnlineRezervasyon = c.OnlineRezervasyon,
+                              Otopark = c.Otopark,
+                              PaketServis = c.PaketServis,
+                              SigaraAlanı = c.SigaraAlanı,
+                              TatlivePasta = c.TatlivePasta,
+                              TerasiVar = c.TerasiVar,
+                              Wifi = c.Wifi,
+                              İcMekan = c.İcMekan
+
+                              
                          }).FirstOrDefault();
-            //var res2 = result.FindAll(x=> x.Equals(1));
-            //foreach (var item in result)
-            //{
-            //    if (item = true)
-            //    {
-            //        List<Additional> additional = new List<Additional>();
-            //        additional.Add(item);
-            //    }
-            //}
+           
 
             return PartialView(result);
         }
