@@ -106,6 +106,26 @@ namespace RestaurantBul.Controllers
 
             return PartialView(result);
         }
+        public ActionResult PopularPlace()
+        {
+            var result = (from a in db.Places
+                          join c in db.Comments on a.PlaceID equals c.PlaceID
+                          join f in db.AddPlas on a.PlaceID equals f.PlaceID
+                          select new CommentViewModel()
+                          {
+                              PlaceID=a.PlaceID,
+                              MenuPic = a.MenuPic,
+                              PlaceName = a.PlaceName,
+                              Content = c.Content,
+                              Point = c.Point,
+                              AvgPrice = a.AvgPrice,
+                              County = a.County,
+                              CloseTime = a.CloseTime,
+                              OpenTime = a.OpenTime
+                          }).OrderByDescending(x => x.PlaceID).Take(3).ToList();
+            return View(result);
+
+        }
 
         public ActionResult CommentList(int id)
         {
@@ -113,7 +133,8 @@ namespace RestaurantBul.Controllers
                           join c in db.Comments on a.PlaceID equals c.PlaceID
                           where a.PlaceID == id
                           select new CommentViewModel
-                          { PlaceID = id,
+                          {
+                             PlaceID = id,
                              Content =c.Content,
                              CommentPic =c.CommentPic,
                              PlaceName= a.PlaceName,

@@ -58,7 +58,7 @@
                                             <h5 class="card-title">@item.PlaceName</h5>
                                             <ul class="card-rating">
                                                 <li>puan</li>
-                                                @*<li> <a href="@Url.Action("Index","Comments",new { id = item.PlaceID })" style=" color:tomato">Yorumlar</a></li>*@
+                                                
                                                 <li><i class="fa fa-circle" aria-hidden="true"></i></li>
                                                 <li>@item.AvgPrice tl</li>
                                                 <li><i class="fa fa-circle" aria-hidden="true"></i></li>
@@ -78,9 +78,7 @@
 
                                         </div>
 
-                                        <div>
-                                            <h6>EkBilgi</h6>
-                                        </div>
+                                       
                                         @if (this.User.Identity.IsAuthenticated)
                                         {
                                         <div class="form-group">
